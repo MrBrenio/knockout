@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/bootstrap-grid.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knockout</title>
+</head>
+<body>
+
+    <div class="container">
+        <!-- div.row>div.col-xs-12 -->
+        <div class="row">
+            <div class="col-xs-12"></div>
+                <br>
+                <br>
+            <label data-bind="text: labelText">Label</label>
+            <input type="text" data-bind="value: inputValue">
+                <br>
+            <button class="btn btn-primary" data-bind="click: buttonAction">Ação</button>
+        </div>
+    </div>
+    
+    
+    <script src="js/knockout-min.js"></script>
+    <script type="text/javascript">
+        function ViewModel(){
+
+            var self = this;
+
+            self.labelText = "Label Text";
+            self.inputValue = "I";
+            self.buttonAction = function() {
+
+                console.log("clicked")
+
+            }
+        }
+
+        vm = new ViewModel()
+
+        ko.applyBindings(vm)
+    </script>
+
+
+
+    
+
+</body>
+</html>
