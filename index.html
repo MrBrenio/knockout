@@ -40,9 +40,9 @@
 
                 self.list.splice(2,1);
 
-                self.inputValue.subscribe(function(novoValor){
+                var subscribe = self.inputValue.subscribe(function(novoValor){
                     if(novoValor == "100")
-                        self.labelText("certo")
+                        subscribe.dispose()
                     else
                         self.labelText("errado")
                 })
